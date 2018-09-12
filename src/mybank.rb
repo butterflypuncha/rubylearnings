@@ -7,13 +7,22 @@ class Account
     end
   end
 
+  public
+  def withdraw(pin_number, amount)
+    if pin_number == @pin
+      puts "Withdrew #{amount}. New balance: $#{@balance}."
+    else
+      puts pin_error
+    end
+  end
+  
   private
 def pin
   @pin = 1234
 end
 def pin_error
   return "Access denied: incorrect PIN."
-end 
+end     
 
 public
 def display_balance(pin_number)
