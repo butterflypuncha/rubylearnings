@@ -15,7 +15,7 @@ class Account
       puts pin_error
     end
   end
-  
+
   private
 def pin
   @pin = 1234
@@ -33,3 +33,4 @@ def display_balance(pin_number)
   end
 end
 
+checking_account = Account.new("Goodo's Account", 1_000_000)
