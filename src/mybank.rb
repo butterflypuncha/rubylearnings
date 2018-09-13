@@ -1,9 +1,10 @@
 class Account
     attr_reader :name
     attr_reader :balance
-    def initialize(name, balance=100)
+    def initialize(name, balance=100, pin)
       @name = name
       @balance = balance
+      @pin = pin
     end
   end
 
@@ -17,12 +18,9 @@ class Account
   end
 
   private
-def pin
-  @pin = 1234
-end
-def pin_error
-  return "Access denied: incorrect PIN."
-end     
+  def pin_error
+    return "Access denied: incorrect PIN."
+  end     
 
 public
 def display_balance(pin_number)
@@ -33,4 +31,5 @@ def display_balance(pin_number)
   end
 end
 
-checking_account = Account.new("Goodo's Account", 1_000_000)
+checking_account = Account.new("Goodo's Account", 1_000_000, 1234)
+checking_account.display_balance 1234
